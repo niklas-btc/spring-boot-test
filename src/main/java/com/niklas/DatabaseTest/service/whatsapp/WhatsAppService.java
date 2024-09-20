@@ -15,7 +15,7 @@ public class WhatsAppService {
     String api_url =  "https://graph.facebook.com/v20.0/378116905390531/messages";
 
     // API Zugriffs Token
-    String accessToken = "EAARnZBwFXroQBO1SdyI484ulVWnAnwoZCGvDgmrEoB3mSU1ZBTGCq1OMGpcEYZC31dtJnrCxKcnnKKKySLieUOZCuhEiLYpyNj36vnUKcNqmZAKkQDXQRc4i87NVUZA1kcdLJZAbB63fXIzGCInpeUu5gX6NbjhAZCTxJNIayrqumkkAkZAcdEbJHvMtHKFGJssneZC"; // Ersetze dies durch den tatsächlichen Token
+    String accessToken = "Platzhalter";
 
     // Initialisiere RestTemplate
     RestTemplate restTemplate = new RestTemplate(); // Tempalte für Rest-api zugriff (CURL)
