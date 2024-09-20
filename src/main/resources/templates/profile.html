@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Willkommen</title>
+    <style>
+        body {
+            font-family: Arial, serif;
+            font-size: 18px;
+        }
+
+        .common-input {
+            border: none;
+            background: #e4e3e3;
+            padding: 8px 24px;
+            margin-bottom: 12px;
+            border-radius: 24px;
+        }
+        .common-button {
+            padding: 8px 32px;
+            border: none;
+            border-radius: 24px;
+            background: linear-gradient(.25turn, #7dc6ed, #6893e1);
+            font-size: 18px;
+            color: #fcfcfc;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+<!--Abfrage, ob es einen Fehler gibt-->
+<div th:if="${error}" class="error-message">
+    <!--Da es einen Fehler gibt, stelle ihn da-->
+    <h3 style="text-align: center; color: crimson" th:text="${error}"></h3>
+</div>
+
+<h1 style="text-align: center">Profil</h1>
+<div style="display: flex; justify-content: center; text-align: left; margin-bottom: 64px;">
+    <div style="display: grid; grid-template-columns: auto 1fr; gap: 4px;">
+        <b>Benutzername:&nbsp;</b><span th:text="${user.username}"></span>
+        <b>Benutzer E-Mail:&nbsp;</b><span th:text="${user.email}"></span>
+        <b>Benutzerkennung:&nbsp;</b><span th:text="${user.UID}"></span>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: center; ">
+    <form style="display: grid; border-radius: 36px; background: #f6f6f6; padding: 36px; text-align: center;" method="post" th:action="@{/profile/{userID}/update(userID=${user.UID})}">
+        <h1 style="margin-top: 0">Deine Daten</h1>
+        <input class="common-input" name="new_username" placeholder="Neuer Benutzername" autocomplete="off">
+        <input class="common-input" name="new_mail" placeholder="Neue E-Mail" autocomplete="off">
+        <button class="common-button" type="submit">Speichern</button>
+    </form>
+</div>
+</body>
+</html>
